@@ -1,7 +1,9 @@
 import { headers } from "next/headers";
 
 export default async function WhoAmIRSC() {
-  const { user } = await fetch("http://localhost:3000/api/whoami", {
+  const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL + "/api/whoami";
+
+  const { user } = await fetch(apiUrl, {
     method: "GET",
     headers: headers(),
   }).then((res) => res.json());
