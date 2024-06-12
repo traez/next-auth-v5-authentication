@@ -1,9 +1,9 @@
 import { headers } from "next/headers";
 
 export default async function WhoAmIRSC() {
-  const apiUrl = process.env.NEXT_PUBLIC_VERCEL_URL + "/api/whoami";
+  const apiUrl = process.env.VERCEL_URL;
 
-  const { user } = await fetch(apiUrl, {
+  const { user } = await fetch(`${apiUrl}/api/whoami`, {
     method: "GET",
     headers: headers(),
   }).then((res) => res.json());
