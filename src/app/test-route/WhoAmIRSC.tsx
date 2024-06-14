@@ -2,9 +2,8 @@ import { headers } from "next/headers";
 
 export default async function WhoAmIRSC() {
   const apiUrl = process.env.VERCEL_URL;
-  console.log(apiUrl)
 
-  const { user } = await fetch(`https://next-auth-v5-authentication.vercel.app/api/whoami`, {
+  const { user } = await fetch(`${apiUrl}/api/whoami`, {
     method: "GET",
     headers: headers(),
   }).then((res) => res.json());
@@ -13,5 +12,5 @@ export default async function WhoAmIRSC() {
 }
 
 /*
-const { user } = await fetch(`${apiUrl}/api/whoami`, {
+const 
 */
