@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 
 export default function WhoAmIAPI() {
   const [user, setUser] = useState(null);
-  //const vercelUrl = process.env.NEXT_PUBLIC_VERCEL_URL;
 
   useEffect(() => {
     fetch(`/api/whoami`)
